@@ -1,27 +1,38 @@
+Claro, aqui está a versão atualizada do seu `README.md`, incorporando a nova pasta `LPContainerApps` com a explicação do projeto de Container Apps no Azure:
+
+---
 
 ### 🛒 Cadastro de Produtos com Streamlit e Azure
 
-Este projeto foi desenvolvido como parte do desafio prático da plataforma DIO para aplicar conhecimentos em **plataformas de aplicação Microsoft**, utilizando **Azure Storage Blob**, **SQL Server** e **Streamlit** para criação de uma interface web.
+Este repositório contém dois projetos distintos que demonstram o uso de tecnologias da **plataforma Microsoft Azure**:
 
-### 💡 Descrição do Projeto
+1. **Cadastro de Produtos com Streamlit e Azure**
+2. **LPContainerApps – Aplicação Web com Azure Container Apps**
 
-A aplicação permite o cadastro de produtos com nome, preço, descrição e imagem, que é armazenada no **Azure Blob Storage**. Os dados são inseridos em uma tabela no banco de dados SQL Server hospedado na nuvem.
+---
 
-Funcionalidades:
+## 📦 Projeto 1 – Cadastro de Produtos com Streamlit e Azure
+
+Este projeto foi desenvolvido como parte do desafio prático da plataforma DIO para aplicar conhecimentos em **Azure Storage Blob**, **SQL Server** e **Streamlit**.
+
+### 💡 Descrição
+
+A aplicação permite o cadastro de produtos com nome, preço, descrição e imagem, armazenando imagens no **Azure Blob Storage** e os dados em um banco **SQL Server** hospedado na nuvem.
+
+#### Funcionalidades
 
 - Upload de imagem para o Azure Blob
-- Inserção de dados no banco SQL Server (via pymssql)
-- Interface interativa com Streamlit
+- Inserção de dados no banco SQL Server (via `pymssql`)
+- Interface web com Streamlit
 - Listagem dos produtos cadastrados com exibição da imagem
 
-### 📸 Prints da Aplicação
+### 📸 Prints
 
-### Tela de Cadastro
-![Tela de Cadastro](./prints/cadastro.png)
+#### Tela de Cadastro
+![Tela de Cadastro](./BLOBSTORAGE/prints/cadastro.png)
 
-### Tela de Listagem
-![Tela de Listagem](./prints/produtos.png)
-
+#### Tela de Listagem
+![Tela de Listagem](./BLOBSTORAGE/prints/produtos.png)
 
 ### 🔧 Tecnologias Utilizadas
 
@@ -31,8 +42,7 @@ Funcionalidades:
 - [pymssql](http://www.pymssql.org/)
 - [dotenv](https://pypi.org/project/python-dotenv/)
 
-### 📦 Instalação
-
+### 🚀 Como Rodar
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
@@ -52,27 +62,52 @@ SQL_USER=
 SQL_PASSWORD=
 ```
 
-Inicie o Streamlit:
+Execute com:
 
 ```bash
 streamlit run app.py
 ```
 
-### 🧠 Aprendizados e Insights
+---
 
-Durante o projeto, aprofundei os conhecimentos em:
+## 📦 Projeto 2 – LPContainerApps: Aplicação no Azure Container Apps
 
-- Conexão segura com serviços do Azure usando variáveis de ambiente
-- Manipulação de arquivos binários (imagem) no Streamlit
-- Integração entre serviços de nuvem (Blob Storage + SQL Server)
-- Criação de interfaces simples e intuitivas com Streamlit
+Este diretório contém um projeto que demonstra a criação e publicação de uma aplicação containerizada utilizando **Azure Container Apps**.
 
-### 🚀 Possibilidades Futuras
+### 📁 Estrutura da Pasta
 
-- Autenticação de usuários
-- Filtros por categoria/preço
-- Dashboard de estatísticas com gráficos
-- Publicação em nuvem via Azure Web App
+```
+LPContainerApps/
+├── html/
+│   └── index.html          # Página principal da aplicação
+├── Dockerfile              # Dockerfile para criação da imagem
+├── deploy.ps1              # Script de criação da infraestrutura no Azure
+├── build-and-push.ps1      # Script para build e push da imagem para o ACR
+```
+
+### ⚙️ Descrição
+
+O projeto mostra como:
+
+- Criar uma imagem Docker a partir de um `index.html`
+- Publicar a imagem em um Azure Container Registry (ACR)
+- Criar e expor um **Container App** via script PowerShell
+- Automatizar o processo de build, push e deploy
+
+### 🔧 Requisitos
+
+- Docker instalado
+- Azure CLI configurado e logado
+- Permissões para criar recursos no Azure (ACR, RG, Container App)
+
+
+### 🧠 Aprendizados
+
+- Criação de containers personalizados com Docker
+- Publicação em Azure Container Apps via linha de comando
+- Deploy automatizado com PowerShell
+
+---
 
 ### 📌 Projeto Original DIO
 
@@ -80,6 +115,3 @@ Este projeto é uma versão personalizada do desafio prático fornecido pela DIO
 🔗 [Repositório Base Microsoft Application Platform](https://github.com/digitalinnovationone/Microsoft_Application_Platform)
 
 ---
-
-
-
